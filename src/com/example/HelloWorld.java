@@ -12,7 +12,11 @@ package com.example;
 public class HelloWorld {
     
     static String greeting() {
-        return "THIS IS FOR TESTING PURPOSES";
+        return "Hello, world!";
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(greeting());
     }
     
 }
