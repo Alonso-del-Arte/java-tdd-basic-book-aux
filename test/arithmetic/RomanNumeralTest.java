@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tests of the RomanNumeral class.
  * @author Alonso del Arte
  */
 public class RomanNumeralTest {
@@ -19,6 +19,45 @@ public class RomanNumeralTest {
         assertEquals("I", new RomanNumeral(1).toString());
         assertEquals("II", new RomanNumeral(2).toString());
         assertEquals("III", new RomanNumeral(3).toString());
+    }
+    
+    @Test
+    public void testToStringFour() {
+        assertEquals("IV", new RomanNumeral(4));
+    }
+            
+    @Test
+    public void testToStringFive() {
+        assertEquals("V", new RomanNumeral(5));
+    }
+            
+    @Test
+    public void testToStringSixSevenEight() {
+        assertEquals("VI", new RomanNumeral(6));
+        assertEquals("VII", new RomanNumeral(7));
+        assertEquals("VIII", new RomanNumeral(8));
+    }
+            
+    @Test
+    public void testToStringNine() {
+        assertEquals("IX", new RomanNumeral(9));
+    }
+            
+    @Test
+    public void testToStringTen() {
+        assertEquals("X", new RomanNumeral(10));
+    }
+    
+//    @Test
+    public void testToStringElevenToNineteen() {
+        RomanNumeral ten = new RomanNumeral(10);
+        for (int i = 1; i < 10; i++) {
+            RomanNumeral number = new RomanNumeral(10 + i);
+            RomanNumeral addend = new RomanNumeral(i);
+            String expected = ten.toString() + addend.toString();
+            String actual = number.toString();
+            assertEquals(expected, actual);
+        }
     }
     
 }
