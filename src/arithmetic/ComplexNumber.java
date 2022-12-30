@@ -34,8 +34,8 @@ public class ComplexNumber {
     @Override
     public String toString() {
         char middleSign = this.imagPart < 0.0 ? '-' : '+';
-        return Double.toString(this.realPart) + middleSign + this.imagPart 
-                + 'i';
+        return Double.toString(this.realPart) + middleSign 
+                + Math.abs(this.imagPart) + 'i';
     }
     
     public ComplexNumber(double re, double im) {
