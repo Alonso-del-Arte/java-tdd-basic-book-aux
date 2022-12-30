@@ -26,4 +26,17 @@ public class ComplexNumberTest {
         assertEquals(expected, actual);
     }
     
+    /**
+     * 
+     */
+    @Test
+    public void testToStringNegativeZeroForImagPart() {
+        double re = Math.random() - 0.5;
+        double im = Double.longBitsToDouble(Long.MIN_VALUE);
+        ComplexNumber z = new ComplexNumber(re, im);
+        String expected = re + "+0.0i";
+        String actual = z.toString().replace(" ", "");
+        assertEquals(expected, actual);
+    }
+    
 }
