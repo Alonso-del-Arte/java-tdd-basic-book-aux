@@ -83,6 +83,11 @@ public class Fraction {
         return Double.NaN;
     }
     
+    @Override
+    public String toString() {
+        return this.numerator + "/" + this.denominator;
+    }
+    
     // TODO: Write tests for this
     public String toHTMLString() {
         return "NOT IMPLEMENTED YET";
