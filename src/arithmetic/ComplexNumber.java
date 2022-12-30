@@ -31,6 +31,13 @@ public class ComplexNumber {
         return Double.NaN;
     }
     
+    @Override
+    public String toString() {
+        char middleSign = this.imagPart < 0.0 ? '-' : '+';
+        return Double.toString(this.realPart) + middleSign + this.imagPart 
+                + 'i';
+    }
+    
     public ComplexNumber(double re, double im) {
         this.realPart = re;
         this.imagPart = im;
