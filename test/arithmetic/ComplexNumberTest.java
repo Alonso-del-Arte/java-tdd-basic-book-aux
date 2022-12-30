@@ -28,7 +28,7 @@ public class ComplexNumberTest {
         double im = Math.random() - 0.5;
         ComplexNumber z = new ComplexNumber(re, im);
         String middleSign = im < 0.0 ? "-" : "+";
-        String expected = re + middleSign + im + "i";
+        String expected = re + middleSign + Math.abs(im) + "i";
         String actual = z.toString().replace(" ", "");
         assertEquals(expected, actual);
     }
