@@ -52,7 +52,7 @@ public class RomanNumeralTest {
         assertEquals("X", new RomanNumeral(10).toString());
     }
     
-//    @Test
+    @Test
     public void testToStringElevenToNineteen() {
         RomanNumeral ten = new RomanNumeral(10);
         for (int i = 1; i < 10; i++) {
@@ -63,6 +63,8 @@ public class RomanNumeralTest {
             assertEquals(expected, actual);
         }
     }
+    
+    // TODO: Write tests 20 to MAXIMUM_NUMBER
     
     @Test
     public void testConstructorRejectsZero() {
@@ -84,7 +86,6 @@ public class RomanNumeralTest {
                     + invalidNumber;
             fail(msg);
         }
-        
     }
     
     @Test
@@ -107,7 +108,8 @@ public class RomanNumeralTest {
                     + invalidNumber;
             fail(msg);
         }
-        
     }
+    
+    // TODO: Write test for constructor rejects n > MAXIMUM_NUMBER
     
 }
