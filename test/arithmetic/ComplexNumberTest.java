@@ -15,6 +15,15 @@ import static org.junit.Assert.*;
 public class ComplexNumberTest {
     
     /**
+     * A variance or tolerance for 64-bit floating point numbers. The floating 
+     * point number format is inherently imprecise. We don't want tests to fail 
+     * just because of a tiny loss of machine precision. So we specify what is 
+     * the largest variance we will tolerate for two floating point numbers to 
+     * be considered close enough.
+     */
+    private static final double TEST_DELTA = 0.00000001;
+    
+    /**
      * Test of the toString function of the ComplexNumber class. The real part 
      * of the number should be followed by either a plus sign or a minus sign 
      * for the imaginary part, then the digits of the imaginary part followed by 
@@ -54,6 +63,29 @@ public class ComplexNumberTest {
                 + " should be reported as either " + expectedA + " or " 
                 + expectedB + ". Actual: " + actual;
         assert expectedA.equals(actual) || expectedB.equals(actual) : msg;
+    }
+    
+    @Test
+    public void testGetRealPart() {
+        System.out.println("getRealPart");
+        double expected = Math.random() - 0.5;
+        double im = Math.random() - 0.5;
+        ComplexNumber z = new ComplexNumber(expected, im);
+        double actual = z.getRealPart();
+        String msg = "Real part of " + z.toString() + " should be " + expected;
+        assertEquals(msg, expected, actual, TEST_DELTA);
+    }
+    
+    @Test
+    public void testGetImaginaryPart() {
+        System.out.println("getImaginaryPart");
+        double re = Math.random() - 0.5;
+        double expected = Math.random() - 0.5;
+        ComplexNumber z = new ComplexNumber(re, expected);
+        double actual = z.getImaginaryPart();
+        String msg = "Imaginary part of " + z.toString() + " should be " 
+                + expected;
+        assertEquals(msg, expected, actual, TEST_DELTA);
     }
     
     // TODO: Write test for abs(), the absolute value of a complex number
