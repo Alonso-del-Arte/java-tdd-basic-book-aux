@@ -23,29 +23,29 @@ public class RomanNumeralTest {
     
     @Test
     public void testToStringFour() {
-        assertEquals("IV", new RomanNumeral(4));
+        assertEquals("IV", new RomanNumeral(4).toString());
     }
             
     @Test
     public void testToStringFive() {
-        assertEquals("V", new RomanNumeral(5));
+        assertEquals("V", new RomanNumeral(5).toString());
     }
             
     @Test
     public void testToStringSixSevenEight() {
-        assertEquals("VI", new RomanNumeral(6));
-        assertEquals("VII", new RomanNumeral(7));
-        assertEquals("VIII", new RomanNumeral(8));
+        assertEquals("VI", new RomanNumeral(6).toString());
+        assertEquals("VII", new RomanNumeral(7).toString());
+        assertEquals("VIII", new RomanNumeral(8).toString());
     }
             
     @Test
     public void testToStringNine() {
-        assertEquals("IX", new RomanNumeral(9));
+        assertEquals("IX", new RomanNumeral(9).toString());
     }
             
     @Test
     public void testToStringTen() {
-        assertEquals("X", new RomanNumeral(10));
+        assertEquals("X", new RomanNumeral(10).toString());
     }
     
 //    @Test
