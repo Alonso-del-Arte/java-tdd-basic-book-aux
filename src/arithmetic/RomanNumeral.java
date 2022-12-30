@@ -57,6 +57,11 @@ public class RomanNumeral {
     }
     
     public RomanNumeral(int n) {
+        if (n < MINIMUM_NUMBER) {
+            String excMsg = "Number " + n + " is less than minimum number " 
+                    + MINIMUM_NUMBER;
+            throw new IllegalArgumentException(excMsg);
+        }
         this.number = n;
     }
     
