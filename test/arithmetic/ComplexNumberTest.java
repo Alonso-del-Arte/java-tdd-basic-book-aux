@@ -9,18 +9,21 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tests of the ComplexNumber class.
  * @author Alonso del Arte
  */
 public class ComplexNumberTest {
     
-    public ComplexNumberTest() {
-    }
-
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testToString() {
+        System.out.println("toString");
+        double re = Math.random() - 0.5;
+        double im = Math.random() - 0.5;
+        ComplexNumber z = new ComplexNumber(re, im);
+        String middleSign = im < 0.0 ? "-" : "+";
+        String expected = re + middleSign + im + "i";
+        String actual = z.toString().replace(" ", "");
+        assertEquals(expected, actual);
     }
     
 }
