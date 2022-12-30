@@ -5,6 +5,8 @@
  */
 package arithmetic;
 
+import java.util.Random;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -13,6 +15,8 @@ import static org.junit.Assert.*;
  * @author Alonso del Arte
  */
 public class RomanNumeralTest {
+    
+    private static final Random RANDOM = new Random();
     
     @Test
     public void testToStringOneTwoThree() {
@@ -58,6 +62,52 @@ public class RomanNumeralTest {
             String actual = number.toString();
             assertEquals(expected, actual);
         }
+    }
+    
+    @Test
+    public void testConstructorRejectsZero() {
+        int invalidNumber = 0;
+        try {
+            RomanNumeral badNumeral = new RomanNumeral(invalidNumber);
+            String msg = "Trying to instantiate RomanNumeral with " 
+                    + invalidNumber + " should not have created " 
+                    + badNumeral.toString();
+            fail(msg);
+        } catch (IllegalArgumentException iae) {
+            System.out.println("Trying to instantiate RomanNumeral with " 
+                    + invalidNumber 
+                    + " correctly caused IllegalArgumentException");
+            System.out.println("\"" + iae.getMessage() + "\"");
+        } catch (RuntimeException re) {
+            String msg = re.getClass().getName() 
+                    + " is the wrong exception to throw for bad number " 
+                    + invalidNumber;
+            fail(msg);
+        }
+        
+    }
+    
+    @Test
+    public void testConstructorRejectsNegativeNumber() {
+        int invalidNumber = -RANDOM.nextInt(4000) - 1;
+        try {
+            RomanNumeral badNumeral = new RomanNumeral(invalidNumber);
+            String msg = "Trying to instantiate RomanNumeral with " 
+                    + invalidNumber + " should not have created " 
+                    + badNumeral.toString();
+            fail(msg);
+        } catch (IllegalArgumentException iae) {
+            System.out.println("Trying to instantiate RomanNumeral with " 
+                    + invalidNumber 
+                    + " correctly caused IllegalArgumentException");
+            System.out.println("\"" + iae.getMessage() + "\"");
+        } catch (RuntimeException re) {
+            String msg = re.getClass().getName() 
+                    + " is the wrong exception to throw for bad number " 
+                    + invalidNumber;
+            fail(msg);
+        }
+        
     }
     
 }
