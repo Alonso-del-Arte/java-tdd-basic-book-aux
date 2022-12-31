@@ -10,4 +10,8 @@ public class Animal {
         return "Unknown";
     }
 
+    public String call() {
+        return "";
+    }
+
 }
