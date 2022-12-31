@@ -1,14 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package animals.chordates.birds.charadriiformes.auks.puffins;
 
-/**
- *
- * @author Alonso del Arte
- */
-public class AtlanticPuffin {
+import animals.characteristics.FlightCapable;
+import animals.characteristics.FlightParameters;
+import animals.characteristics.SwimCapable;
+import animals.characteristics.SwimParameters;
+
+public class AtlanticPuffin extends Puffin 
+        implements FlightCapable, SwimCapable {
+    
+    public String species() {
+        return "Fratercula arctica";
+    }
+
+    @Override
+    public void fly(FlightParameters flightParams) {
+        System.out.println("Flying somehow...");
+    }
+
+    @Override
+    public void swim(SwimParameters swimParams) {
+        System.out.println("Swimming somehow...");
+    }
     
 }
