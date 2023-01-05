@@ -6,8 +6,11 @@
 package collections.mutable;
 
 /**
- *
- * @param <E>
+ * EXERCISE: A re-imagining of <code>java.util.ArrayList&lt;E&gt;</code>. For 
+ * this exercise, pretend that <code>ArrayList&lt;E&gt;</code> does not exist. 
+ * But, if you get stuck, refer to that class.
+ * @param <E> The type that the list will hold. For example, 
+ * <code>java.time.LocalDateTime</code>.
  * @author Alonso del Arte
  */
 public class ArrayBackedList<E> {
@@ -16,9 +19,12 @@ public class ArrayBackedList<E> {
     
     private Object[] elements;
     
-    // TODO: Write tests for this
+    private void expandCapacity() {
+        //
+    }
+    
     public boolean add(E element) {
-        return false;
+        return true;
     }
     
     // TODO: Write tests for this
