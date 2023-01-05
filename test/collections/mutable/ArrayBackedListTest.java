@@ -5,6 +5,8 @@
  */
 package collections.mutable;
 
+import arithmetic.ComplexNumber;
+
 import java.time.LocalDateTime;
 
 import org.junit.Test;
@@ -31,6 +33,24 @@ public class ArrayBackedListTest {
     }
 
     /**
+     * Test of the size function, of the ArrayBackedList class.
+     */
+    @Test
+    public void testSize() {
+        System.out.println("size");
+        ArrayBackedList<ComplexNumber> list = new ArrayBackedList<>();
+        for (int expected = 0; 
+                expected < ArrayBackedList.DEFAULT_INITIAL_CAPACITY; 
+                expected++) {
+            int actual = list.size();
+            assertEquals(expected, actual);
+            ComplexNumber number = new ComplexNumber(expected * Math.random(), 
+                    expected * Math.random());
+            list.add(number);
+        }
+    }
+
+    /**
      * Test of add method, of class ArrayBackedList.
      */
 //    @Test
@@ -41,20 +61,6 @@ public class ArrayBackedListTest {
         ArrayBackedList instance = new ArrayBackedList();
         boolean expResult = false;
         boolean result = instance.add(index, element);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of size method, of class ArrayBackedList.
-     */
-//    @Test
-    public void testSize() {
-        System.out.println("size");
-        ArrayBackedList instance = new ArrayBackedList();
-        int expResult = 0;
-        int result = instance.size();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
