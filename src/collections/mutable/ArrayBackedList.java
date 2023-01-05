@@ -19,11 +19,14 @@ public class ArrayBackedList<E> {
     
     private Object[] elements;
     
+    private int count = 0;
+    
     private void expandCapacity() {
         //
     }
     
     public boolean add(E element) {
+        this.count++;
         return true;
     }
     
@@ -32,9 +35,8 @@ public class ArrayBackedList<E> {
         return false;
     }
     
-    // TODO: Write tests for this
     public int size() {
-        return Integer.MIN_VALUE;
+        return this.count;
     }
     
     // TODO: Write tests for this
