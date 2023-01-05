@@ -15,7 +15,7 @@ package collections.mutable;
  */
 public class ArrayBackedList<E> {
     
-    private static final int DEFAULT_INITIAL_CAPACITY = 10;
+    public static final int DEFAULT_INITIAL_CAPACITY = 10;
     
     private Object[] elements;
     
