@@ -5,37 +5,35 @@
  */
 package collections.mutable;
 
+import java.time.LocalDateTime;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tests of the ArrayBackedList&lt;E&gt; class.
  * @author Alonso del Arte
  */
 public class ArrayBackedListTest {
     
-    public ArrayBackedListTest() {
-    }
-
     /**
-     * Test of add method, of class ArrayBackedList.
+     * Test of the add function, of the ArrayBackedList class.
      */
     @Test
-    public void testAdd_GenericType() {
+    public void testAdd() {
         System.out.println("add");
-        Object element = null;
-        ArrayBackedList instance = new ArrayBackedList();
-        boolean expResult = false;
-        boolean result = instance.add(element);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        LocalDateTime time = LocalDateTime.now();
+        ArrayBackedList<LocalDateTime> list = new ArrayBackedList<>();
+        boolean opResult = list.add(time);
+        String msg = "Should be able to add " + time.toString() 
+                + " to list of times";
+        assert opResult : msg;
     }
 
     /**
      * Test of add method, of class ArrayBackedList.
      */
-    @Test
+//    @Test
     public void testAdd_int_GenericType() {
         System.out.println("add");
         int index = 0;
@@ -51,7 +49,7 @@ public class ArrayBackedListTest {
     /**
      * Test of size method, of class ArrayBackedList.
      */
-    @Test
+//    @Test
     public void testSize() {
         System.out.println("size");
         ArrayBackedList instance = new ArrayBackedList();
@@ -65,7 +63,7 @@ public class ArrayBackedListTest {
     /**
      * Test of get method, of class ArrayBackedList.
      */
-    @Test
+//    @Test
     public void testGet() {
         System.out.println("get");
         int index = 0;
@@ -80,7 +78,7 @@ public class ArrayBackedListTest {
     /**
      * Test of contain method, of class ArrayBackedList.
      */
-    @Test
+//    @Test
     public void testContain() {
         System.out.println("contain");
         Object element = null;
@@ -95,7 +93,7 @@ public class ArrayBackedListTest {
     /**
      * Test of indexOf method, of class ArrayBackedList.
      */
-    @Test
+//    @Test
     public void testIndexOf() {
         System.out.println("indexOf");
         Object element = null;
@@ -110,7 +108,7 @@ public class ArrayBackedListTest {
     /**
      * Test of isEmpty method, of class ArrayBackedList.
      */
-    @Test
+//    @Test
     public void testIsEmpty() {
         System.out.println("isEmpty");
         ArrayBackedList instance = new ArrayBackedList();
@@ -124,7 +122,7 @@ public class ArrayBackedListTest {
     /**
      * Test of clear method, of class ArrayBackedList.
      */
-    @Test
+//    @Test
     public void testClear() {
         System.out.println("clear");
         ArrayBackedList instance = new ArrayBackedList();
