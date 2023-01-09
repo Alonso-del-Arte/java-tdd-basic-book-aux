@@ -29,6 +29,7 @@ public class ArrayBackedList<E> {
         if (element == null) {
             return false;
         } else {
+            this.elements[this.count] = element;
             this.count++;
             return true;
         }
@@ -43,9 +44,8 @@ public class ArrayBackedList<E> {
         return this.count;
     }
     
-    // TODO: Write tests for this
     public E get(int index) {
-        return null;
+        return (E) this.elements[index];
     }
     
     // TODO: Write tests for this
@@ -72,7 +72,7 @@ public class ArrayBackedList<E> {
     }
     
     public ArrayBackedList(int initialCapacity) {
-        //
+        this.elements = new Object[initialCapacity];
     }
     
 }
