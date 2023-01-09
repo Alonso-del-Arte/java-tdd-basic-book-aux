@@ -9,6 +9,8 @@ import arithmetic.ComplexNumber;
 
 import java.time.LocalDateTime;
 
+import javax.smartcardio.CardTerminal;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,6 +19,14 @@ import static org.junit.Assert.*;
  * @author Alonso del Arte
  */
 public class ArrayBackedListTest {
+    
+    @Test
+    public void testAddRejectsNull() {
+        ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
+        boolean opResult = list.add(null);
+        String msg = "Should not have been able to add null to list";
+        assert !opResult : msg;
+    }
     
     /**
      * Test of the add function, of the ArrayBackedList class.
