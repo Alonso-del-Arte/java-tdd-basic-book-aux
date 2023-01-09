@@ -26,8 +26,9 @@ public class ArrayBackedList<E> {
     }
     
     public boolean add(E element) {
-        this.count++;
-        return true;
+        return false; //element != null;
+//        this.count++;
+//        return true;
     }
     
     // TODO: Write tests for this
