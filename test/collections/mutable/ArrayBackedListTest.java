@@ -7,7 +7,9 @@ package collections.mutable;
 
 import arithmetic.ComplexNumber;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.Random;
 
 import javax.smartcardio.CardTerminal;
 
@@ -19,6 +21,8 @@ import static org.junit.Assert.*;
  * @author Alonso del Arte
  */
 public class ArrayBackedListTest {
+    
+    private static final Random RANDOM = new Random();
     
     @Test
     public void testAddRejectsNull() {
@@ -61,34 +65,18 @@ public class ArrayBackedListTest {
     }
 
     /**
-     * Test of add method, of class ArrayBackedList.
+     * Test of the get function, of the ArrayBackedList class.
      */
-//    @Test
-    public void testAdd_int_GenericType() {
-        System.out.println("add");
-        int index = 0;
-        Object element = null;
-        ArrayBackedList instance = new ArrayBackedList();
-        boolean expResult = false;
-        boolean result = instance.add(index, element);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of get method, of class ArrayBackedList.
-     */
-//    @Test
+    @Test
     public void testGet() {
         System.out.println("get");
-        int index = 0;
-        ArrayBackedList instance = new ArrayBackedList();
-        Object expResult = null;
-        Object result = instance.get(index);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ArrayBackedList<BigInteger> list = new ArrayBackedList<>();
+        for (int i = 0; i < ArrayBackedList.DEFAULT_INITIAL_CAPACITY; i++) {
+            BigInteger expected = new BigInteger(64 + i, RANDOM);
+            list.add(expected);
+            BigInteger actual = list.get(i);
+            assertEquals(expected, actual);
+        }
     }
 
     /**
