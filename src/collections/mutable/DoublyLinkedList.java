@@ -13,23 +13,14 @@ package collections.mutable;
  */
 public class DoublyLinkedList<E> {
     
-    // TODO: Determine if this applicable for the direction you choose
     private Node<E> start = null;
     
-    // TODO: Determine if this applicable for the direction you choose
     private Node<E> finish = null;
     
-    // TODO: Write tests for this
-    public boolean add(E element) {
-        return false;
-    }
-    
-    // TODO: Determine if this applicable for the direction you choose
     public void addAtBeginning(E element) {
         // TODO: Write tests for this
     }
     
-    // TODO: Determine if this applicable for the direction you choose
     public void addAtEnd(E element) {
         // TODO: Write tests for this
     }
@@ -39,13 +30,11 @@ public class DoublyLinkedList<E> {
         return null;
     }
     
-// TODO: Determine if this applicable for the direction you choose    
-// TODO: Write tests for this
+    // TODO: Write tests for this
     public E getFirst() {
         return null;
     }
     
-    // TODO: Determine if this applicable for the direction you choose
     // TODO: Write tests for this
     public E getLast() {
         return null;
@@ -67,6 +56,11 @@ public class DoublyLinkedList<E> {
     }
     
     // TODO: Write tests for this
+    public int lastIndexOf(E element) {
+        return Integer.MIN_VALUE;
+    }
+    
+    // TODO: Write tests for this
     public boolean isEmpty() {
         return false;
     }
@@ -83,10 +77,8 @@ public class DoublyLinkedList<E> {
         
         final E elem;
         
-        // TODO: Determine if this applicable for the direction you choose
         Node<E> previous = null;
         
-        // TODO: Determine if this applicable for the direction you choose
         Node<E> next = null;
         
         Node(E element) {
