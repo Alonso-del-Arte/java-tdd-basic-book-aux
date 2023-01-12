@@ -17,10 +17,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tests of the DoublyLinkedList&lt;E&gt; class.
  * @author Alonso del Arte
  */
 public class DoublyLinkedListTest {
+    
+    private static final Random RANDOM = new Random();
     
     @Test
     public void testAddAtBeginningRejectsNull() {
@@ -63,9 +65,28 @@ public class DoublyLinkedListTest {
     public void testIsEmpty() {
         System.out.println("isEmpty");
         DoublyLinkedList<AttributeValueExp> list = new DoublyLinkedList<>();
-        boolean opResult = list.isEmpty();
         String msg = "Newly created list with no elements should be empty";
-        assert opResult : msg;
+        assert list.isEmpty() : msg;
+    }
+    
+    @Test
+    public void testIsNotEmptyAfterAddAtBeginning() {
+        DoublyLinkedList<BigInteger> list = new DoublyLinkedList<>();
+        BigInteger element = new BigInteger(128, RANDOM);
+        list.addAtBeginning(element);
+        String msg = "List should not be empty after adding the number " 
+                + element.toString() + " to the beginning";
+        assert !list.isEmpty() : msg;
+    }
+
+    @Test
+    public void testIsNotEmptyAfterAddAtEnd() {
+        DoublyLinkedList<BigInteger> list = new DoublyLinkedList<>();
+        BigInteger element = new BigInteger(128, RANDOM);
+        list.addAtEnd(element);
+        String msg = "List should not be empty after adding the number " 
+                + element.toString() + " to the end";
+        assert !list.isEmpty() : msg;
     }
 
     /**
