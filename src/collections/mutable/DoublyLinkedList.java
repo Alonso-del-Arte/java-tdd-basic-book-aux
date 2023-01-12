@@ -66,9 +66,8 @@ public class DoublyLinkedList<E> {
         return Integer.MIN_VALUE;
     }
     
-    // TODO: Write tests for this
     public boolean isEmpty() {
-        return false;
+        return true;
     }
     
     public void clear() {
