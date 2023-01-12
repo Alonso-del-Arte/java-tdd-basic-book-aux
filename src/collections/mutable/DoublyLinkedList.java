@@ -18,11 +18,17 @@ public class DoublyLinkedList<E> {
     private Node<E> finish = null;
     
     public void addAtBeginning(E element) {
-        // TODO: Write tests for this
+        if (element == null) {
+            String excMsg = "Can't add null at beginning nor end of list";
+            throw new NullPointerException(excMsg);
+        }
     }
     
     public void addAtEnd(E element) {
-        // TODO: Write tests for this
+        if (element == null) {
+            String excMsg = "Can't add null at beginning nor end of list";
+            throw new NullPointerException(excMsg);
+        }
     }
     
     // TODO: Write tests for this
