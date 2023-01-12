@@ -57,6 +57,18 @@ public class DoublyLinkedListTest {
     }
     
     /**
+     * Test of the isEmpty function, of the DoublyLinkedList class.
+     */
+    @Test
+    public void testIsEmpty() {
+        System.out.println("isEmpty");
+        DoublyLinkedList<AttributeValueExp> list = new DoublyLinkedList<>();
+        boolean opResult = list.isEmpty();
+        String msg = "Newly created list with no elements should be empty";
+        assert opResult : msg;
+    }
+
+    /**
      * Test of addAtBeginning method, of class DoublyLinkedList.
      */
 //    @Test
@@ -164,20 +176,6 @@ public class DoublyLinkedListTest {
         DoublyLinkedList instance = new DoublyLinkedList();
         int expResult = 0;
         int result = instance.indexOf(element);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isEmpty method, of class DoublyLinkedList.
-     */
-//    @Test
-    public void testIsEmpty() {
-        System.out.println("isEmpty");
-        DoublyLinkedList instance = new DoublyLinkedList();
-        boolean expResult = false;
-        boolean result = instance.isEmpty();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
