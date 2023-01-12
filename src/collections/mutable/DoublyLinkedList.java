@@ -13,6 +13,8 @@ package collections.mutable;
  */
 public class DoublyLinkedList<E> {
     
+    private boolean hasElements = false;
+    
     private Node<E> start = null;
     
     private Node<E> finish = null;
@@ -22,6 +24,7 @@ public class DoublyLinkedList<E> {
             String excMsg = "Can't add null at beginning nor end of list";
             throw new NullPointerException(excMsg);
         }
+        this.hasElements = true;
     }
     
     public void addAtEnd(E element) {
@@ -29,6 +32,7 @@ public class DoublyLinkedList<E> {
             String excMsg = "Can't add null at beginning nor end of list";
             throw new NullPointerException(excMsg);
         }
+        this.hasElements = true;
     }
     
     // TODO: Write tests for this
@@ -67,7 +71,7 @@ public class DoublyLinkedList<E> {
     }
     
     public boolean isEmpty() {
-        return true;
+        return !this.hasElements;
     }
     
     public void clear() {
