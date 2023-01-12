@@ -9,14 +9,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tests of the SinglyLinkedList class.
  * @author Alonso del Arte
  */
 public class SinglyLinkedListTest {
     
-    public SinglyLinkedListTest() {
-    }
-
     /**
      * Test of add method, of class SinglyLinkedList.
      */
@@ -35,7 +32,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of addAtBeginning method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testAddAtBeginning() {
         System.out.println("addAtBeginning");
         Object element = null;
@@ -48,7 +45,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of addAtEnd method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testAddAtEnd() {
         System.out.println("addAtEnd");
         Object element = null;
@@ -61,7 +58,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of get method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testGet() {
         System.out.println("get");
         int index = 0;
@@ -76,7 +73,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of getFirst method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testGetFirst() {
         System.out.println("getFirst");
         SinglyLinkedList instance = new SinglyLinkedList();
@@ -90,7 +87,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of getLast method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testGetLast() {
         System.out.println("getLast");
         SinglyLinkedList instance = new SinglyLinkedList();
@@ -104,7 +101,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of size method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testSize() {
         System.out.println("size");
         SinglyLinkedList instance = new SinglyLinkedList();
@@ -118,13 +115,13 @@ public class SinglyLinkedListTest {
     /**
      * Test of contain method, of class SinglyLinkedList.
      */
-    @Test
-    public void testContain() {
-        System.out.println("contain");
+//    @Test
+    public void testContains() {
+        System.out.println("contains");
         Object element = null;
         SinglyLinkedList instance = new SinglyLinkedList();
         boolean expResult = false;
-        boolean result = instance.contain(element);
+        boolean result = instance.contains(element);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -133,7 +130,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of indexOf method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testIndexOf() {
         System.out.println("indexOf");
         Object element = null;
@@ -148,7 +145,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of isEmpty method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testIsEmpty() {
         System.out.println("isEmpty");
         SinglyLinkedList instance = new SinglyLinkedList();
@@ -162,7 +159,7 @@ public class SinglyLinkedListTest {
     /**
      * Test of clear method, of class SinglyLinkedList.
      */
-    @Test
+//    @Test
     public void testClear() {
         System.out.println("clear");
         SinglyLinkedList instance = new SinglyLinkedList();

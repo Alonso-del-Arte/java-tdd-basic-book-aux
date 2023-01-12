@@ -49,7 +49,7 @@ public class ArrayBackedList<E> {
     }
     
     // TODO: Write tests for this
-    public boolean contain(E element) {
+    public boolean contains(E element) {
         return false;
     }
     

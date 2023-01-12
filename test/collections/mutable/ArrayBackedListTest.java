@@ -80,15 +80,15 @@ public class ArrayBackedListTest {
     }
 
     /**
-     * Test of contain method, of class ArrayBackedList.
+     * Test of contains method, of class ArrayBackedList.
      */
 //    @Test
-    public void testContain() {
-        System.out.println("contain");
+    public void testContains() {
+        System.out.println("contains");
         Object element = null;
         ArrayBackedList instance = new ArrayBackedList();
         boolean expResult = false;
-        boolean result = instance.contain(element);
+        boolean result = instance.contains(element);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

@@ -6,13 +6,12 @@
 package collections.mutable;
 
 /**
- * EXERCISE: Create a forward- or backward-pointing singly-linked list. A stub 
- * is provided for a nested static class. You will have to delete some things 
- * that don't apply for the direction that you choose to go with.
+ * EXERCISE: Create a doubly-linked list. A stub is provided for a nested static 
+ * class.
  * @param <E> The type of elements the list will hold.
  * @author Alonso del Arte
  */
-public class SinglyLinkedList<E> {
+public class DoublyLinkedList<E> {
     
     // TODO: Determine if this applicable for the direction you choose
     private Node<E> start = null;
@@ -76,7 +75,7 @@ public class SinglyLinkedList<E> {
         // TODO: Write tests for this
     }
     
-    public SinglyLinkedList() {
+    public DoublyLinkedList() {
         //
     }
     
