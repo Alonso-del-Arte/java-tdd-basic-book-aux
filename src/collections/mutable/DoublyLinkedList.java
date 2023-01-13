@@ -42,7 +42,7 @@ public class DoublyLinkedList<E> {
         } else {
             Node<E> node = new Node<>(element);
             node.next = this.start;
-            this.start.previous = node;
+//            this.start.previous = node;
             this.start = node;
             this.elemCount++;
         }
