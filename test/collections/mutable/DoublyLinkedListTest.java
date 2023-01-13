@@ -126,6 +126,23 @@ public class DoublyLinkedListTest {
         }
     }
 
+    /**
+     * Test of the size function, of the DoublyLinkedList class.
+     */
+    @Test
+    public void testSize() {
+        System.out.println("size");
+        int eventualSize = 2 * RANDOM.nextInt(64) + 16;
+        DoublyLinkedList<LocalDateTime> list = new DoublyLinkedList<>();
+        for (int expected = 0; expected < eventualSize; expected += 2) {
+            int actual = list.size();
+            assertEquals(expected, actual);
+            list.addAtBeginning(LocalDateTime.now().minusMinutes(expected));
+            assertEquals(expected + 1, list.size());
+            list.addAtEnd(LocalDateTime.now().plusMinutes(expected));
+        }
+    }
+
 //    @Test
     public void testToString() {
         System.out.println("toString");
@@ -178,20 +195,6 @@ public class DoublyLinkedListTest {
         DoublyLinkedList instance = new DoublyLinkedList();
         Object expResult = null;
         Object result = instance.getLast();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of size method, of class DoublyLinkedList.
-     */
-//    @Test
-    public void testSize() {
-        System.out.println("size");
-        DoublyLinkedList instance = new DoublyLinkedList();
-        int expResult = 0;
-        int result = instance.size();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
