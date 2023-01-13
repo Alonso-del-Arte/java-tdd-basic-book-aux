@@ -71,11 +71,11 @@ public class DoublyLinkedList<E> {
     }
     
     public E getFirst() {
-        return this.mostRecentlyAdded;
+        return this.start.elem;
     }
     
     public E getLast() {
-        return this.mostRecentlyAdded;
+        return this.finish.elem;
     }
     
     public int size() {
