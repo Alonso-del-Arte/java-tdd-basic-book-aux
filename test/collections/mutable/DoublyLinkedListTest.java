@@ -178,31 +178,31 @@ public class DoublyLinkedListTest {
     }
 
     /**
-     * Test of getFirst method, of class DoublyLinkedList.
+     * Test of the getFirst function, of the DoublyLinkedList class.
      */
-//    @Test
+    @Test
     public void testGetFirst() {
         System.out.println("getFirst");
-        DoublyLinkedList instance = new DoublyLinkedList();
-        Object expResult = null;
-        Object result = instance.getFirst();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        String expected = "This is the first element";
+        list.addAtBeginning(expected);
+        list.addAtEnd("This is the second element");
+        String actual = list.getFirst();
+        assertEquals(expected, actual);
     }
 
     /**
-     * Test of getLast method, of class DoublyLinkedList.
+     * Test of the getLast function, of the DoublyLinkedList class.
      */
-//    @Test
+    @Test
     public void testGetLast() {
         System.out.println("getLast");
-        DoublyLinkedList instance = new DoublyLinkedList();
-        Object expResult = null;
-        Object result = instance.getLast();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        String expected = "This is the second element";
+        list.addAtEnd(expected);
+        list.addAtBeginning("This is the first element");
+        String actual = list.getLast();
+        assertEquals(expected, actual);
     }
 
     /**
