@@ -143,18 +143,23 @@ public class DoublyLinkedListTest {
         }
     }
 
-//    @Test
+    @Test
     public void testToString() {
         System.out.println("toString");
         int size = RANDOM.nextInt(16) + 4;
-        int[] numbers = new int[size];
-        DoublyLinkedList<Integer> listA = new DoublyLinkedList<>();
-        DoublyLinkedList<Integer> listB = new DoublyLinkedList<>();
+        byte[] numbers = new byte[size];
+        RANDOM.nextBytes(numbers);
+        DoublyLinkedList<Byte> listA = new DoublyLinkedList<>();
+        DoublyLinkedList<Byte> listB = new DoublyLinkedList<>();
         for (int i = 0; i < size; i++) {
-            int number = RANDOM.nextInt();
-            numbers[i] = number;
-            listA.addAtEnd(number);
-        }fail("Resume working here");
+            listA.addAtBeginning(numbers[size - i - 1]);
+            listB.addAtEnd(numbers[i]);
+        }
+        String expected = Arrays.toString(numbers);
+        String actualA = listA.toString();
+        assertEquals(expected, actualA);
+        String actualB = listB.toString();
+        assertEquals(expected, actualB);
     }
 
     /**
