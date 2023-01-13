@@ -9,6 +9,7 @@ import arithmetic.ComplexNumber;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Random;
 
 import javax.management.AttributeValueExp;
@@ -88,31 +89,55 @@ public class DoublyLinkedListTest {
                 + element.toString() + " to the end";
         assert !list.isEmpty() : msg;
     }
-
+    
     /**
-     * Test of addAtBeginning method, of class DoublyLinkedList.
+     * Test of the addAtBeginning procedure and the getFirst function, of the 
+     * DoublyLinkedList class.
      */
-//    @Test
-    public void testAddAtBeginning() {
+    @Test
+    public void testAddAtBeginningAndGetFirst() {
         System.out.println("addAtBeginning");
-        Object element = null;
-        DoublyLinkedList instance = new DoublyLinkedList();
-        instance.addAtBeginning(element);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("getFirst");
+        int size = RANDOM.nextInt(64) + 16;
+        DoublyLinkedList<LocalDateTime> list = new DoublyLinkedList<>();
+        for (int i = 0; i < size; i++) {
+            LocalDateTime expected = LocalDateTime.now().minusMinutes(i);
+            list.addAtBeginning(expected);
+            LocalDateTime actual = list.getFirst();
+            assertEquals(expected, actual);
+        }
     }
 
     /**
-     * Test of addAtEnd method, of class DoublyLinkedList.
+     * Test of the addAtEnd procedure and the getLast function, of the 
+     * DoublyLinkedList class.
      */
-//    @Test
-    public void testAddAtEnd() {
+    @Test
+    public void testAddAtEndAndGetLast() {
         System.out.println("addAtEnd");
-        Object element = null;
-        DoublyLinkedList instance = new DoublyLinkedList();
-        instance.addAtEnd(element);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("getLast");
+        int size = RANDOM.nextInt(64) + 16;
+        DoublyLinkedList<LocalDateTime> list = new DoublyLinkedList<>();
+        for (int i = 0; i < size; i++) {
+            LocalDateTime expected = LocalDateTime.now().plusMinutes(i);
+            list.addAtEnd(expected);
+            LocalDateTime actual = list.getLast();
+            assertEquals(expected, actual);
+        }
+    }
+
+//    @Test
+    public void testToString() {
+        System.out.println("toString");
+        int size = RANDOM.nextInt(16) + 4;
+        int[] numbers = new int[size];
+        DoublyLinkedList<Integer> listA = new DoublyLinkedList<>();
+        DoublyLinkedList<Integer> listB = new DoublyLinkedList<>();
+        for (int i = 0; i < size; i++) {
+            int number = RANDOM.nextInt();
+            numbers[i] = number;
+            listA.addAtEnd(number);
+        }fail("Resume working here");
     }
 
     /**
