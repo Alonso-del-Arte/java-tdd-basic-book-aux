@@ -17,6 +17,8 @@ public class DoublyLinkedList<E> {
     
     private E mostRecentlyAdded;
     
+    private int elemCount = 0;
+    
     private Node<E> start = null;
     
     private Node<E> finish = null;
@@ -27,6 +29,7 @@ public class DoublyLinkedList<E> {
             throw new NullPointerException(excMsg);
         }
         this.mostRecentlyAdded = element;
+        this.elemCount++;
         this.hasElements = true;
     }
     
@@ -36,6 +39,7 @@ public class DoublyLinkedList<E> {
             throw new NullPointerException(excMsg);
         }
         this.mostRecentlyAdded = element;
+        this.elemCount++;
         this.hasElements = true;
     }
     
@@ -52,9 +56,8 @@ public class DoublyLinkedList<E> {
         return this.mostRecentlyAdded;
     }
     
-    // TODO: Write tests for this
     public int size() {
-        return Integer.MIN_VALUE;
+        return this.elemCount;
     }
     
     // TODO: Write tests for this
