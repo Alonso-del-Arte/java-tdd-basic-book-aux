@@ -15,8 +15,6 @@ public class DoublyLinkedList<E> {
     
     private boolean hasElements = false;
     
-    private E mostRecentlyAdded;
-    
     private int elemCount = 0;
     
     private Node<E> start = null;
@@ -36,7 +34,6 @@ public class DoublyLinkedList<E> {
             String excMsg = "Can't add null at beginning nor end of list";
             throw new NullPointerException(excMsg);
         }
-        this.mostRecentlyAdded = element;
         if (this.elemCount == 0) {
             this.addVeryFirst(element);
         } else {
@@ -53,7 +50,6 @@ public class DoublyLinkedList<E> {
             String excMsg = "Can't add null at beginning nor end of list";
             throw new NullPointerException(excMsg);
         }
-        this.mostRecentlyAdded = element;
         if (this.elemCount == 0) {
             this.addVeryFirst(element);
         } else {
