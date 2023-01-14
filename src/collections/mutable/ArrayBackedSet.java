@@ -10,6 +10,6 @@ package collections.mutable;
  * @param <E>
  * @author Alonso del Arte
  */
-public class ArrayBackedSet<E> {
+public class ArrayBackedSet<E> extends ArrayBackedCollection<E> {
     
 }

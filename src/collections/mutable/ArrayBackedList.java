@@ -13,7 +13,7 @@ package collections.mutable;
  * <code>java.time.LocalDateTime</code>.
  * @author Alonso del Arte
  */
-public class ArrayBackedList<E> {
+public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
     
