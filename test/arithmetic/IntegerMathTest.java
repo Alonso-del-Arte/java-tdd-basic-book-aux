@@ -11,7 +11,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Tests of IntegerMath class.
+ * Tests of IntegerMath class. Please allow a couple of seconds for these tests 
+ * to run. But if that's too long, adjust the test with timeout.
  * @author Alonso del Arte
  */
 public class IntegerMathTest {
@@ -45,6 +46,12 @@ public class IntegerMathTest {
     
     // TODO: Write other tests for euclideanGCD
     
+    /**
+     * Test of the greatestOddDivisor function, of the IntegerMath class. Take a 
+     * pseudorandom positive odd number less than 131072 and multiply it by some 
+     * power of two by shifting it one to eight bits left. The function should 
+     * find the original odd number.
+     */
     @Test
     public void testGreatestOddDivisor() {
         System.out.println("greatestOddDivisor");
@@ -54,6 +61,25 @@ public class IntegerMathTest {
         int actual = IntegerMath.greatestOddDivisor(n);
         String msg = "Greatest odd divisor of " + n + " is " + expected;
         assertEquals(msg, expected, actual);
+    }
+    
+    /**
+     * Another test of the greatestOddDivisor function, of the IntegerMath 
+     * class. Calling that function on 0 should not get the computer stuck on an 
+     * endless loop of halving 0, so this test waits a full second before either 
+     * getting a result or catching an exception.
+     */
+    @Test(timeout = 1000)
+    public void testGreatestOddDivisorZeroDoesNotCauseEndlessLoop() {
+        try {
+            int result = IntegerMath.greatestOddDivisor(0);
+            System.out.println("Greatest odd divisor of 0 is said to be " 
+                    + result);
+        } catch (RuntimeException re) {
+            System.out.println("Greatest odd divisor of 0 caused " 
+                    + re.getClass().getName());
+            System.out.println("\"" + re.getMessage() + "\"");
+        }
     }
     
 }
