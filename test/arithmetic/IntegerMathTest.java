@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Tests of IntegerMath class.
  * @author Alonso del Arte
  */
 public class IntegerMathTest {
@@ -44,5 +44,16 @@ public class IntegerMathTest {
     }
     
     // TODO: Write other tests for euclideanGCD
+    
+    @Test
+    public void testGreatestOddDivisor() {
+        System.out.println("greatestOddDivisor");
+        int expected = 2 * RANDOM.nextInt(65536) + 1;
+        int shift = RANDOM.nextInt(8) + 1;
+        int n = expected << shift;
+        int actual = IntegerMath.greatestOddDivisor(n);
+        String msg = "Greatest odd divisor of " + n + " is " + expected;
+        assertEquals(msg, expected, actual);
+    }
     
 }
