@@ -82,4 +82,20 @@ public class IntegerMathTest {
         }
     }
     
+    /**
+     * Test of the greatestOddDivisor function, of the IntegerMath class. Take a 
+     * pseudorandom positive odd number less than 131072, multiply it by some 
+     * power of two by shifting it one to eight bits left, and then multiply it 
+     * by -1. The function should find the original odd number.
+     */
+    @Test
+    public void testGreatestOddDivisorNegative() {
+        int expected = 2 * RANDOM.nextInt(65536) + 1;
+        int shift = RANDOM.nextInt(8) + 1;
+        int n = -(expected << shift);
+        int actual = IntegerMath.greatestOddDivisor(n);
+        String msg = "Greatest odd divisor of " + n + " is " + expected;
+        assertEquals(msg, expected, actual);
+    }
+
 }
