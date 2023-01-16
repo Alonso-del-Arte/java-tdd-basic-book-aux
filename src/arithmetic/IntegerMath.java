@@ -18,6 +18,9 @@ public class IntegerMath {
     }
     
     public static int greatestOddDivisor(int n) {
+        if (n == 0) {
+            return Integer.MAX_VALUE;
+        }
         while (n % 2 == 0) {
             n /= 2;
         }
