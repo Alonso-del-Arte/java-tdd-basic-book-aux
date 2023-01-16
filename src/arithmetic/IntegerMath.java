@@ -17,9 +17,11 @@ public class IntegerMath {
         return Integer.MIN_VALUE;
     }
     
-    // TODO: Write tests for this
     public static int greatestOddDivisor(int n) {
-        return Integer.MIN_VALUE;
+        while (n % 2 == 0) {
+            n /= 2;
+        }
+        return n;
     }
 
 }
