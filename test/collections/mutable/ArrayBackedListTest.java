@@ -45,6 +45,36 @@ public class ArrayBackedListTest {
                 + " to list of times";
         assert opResult : msg;
     }
+    
+    @Test
+    public void testCanAddBeyondInitialCapacity() {
+        LocalDateTime curr = LocalDateTime.now();
+        ArrayBackedList<LocalDateTime> list 
+                = new ArrayBackedList<>(ArrayBackedList
+                        .DEFAULT_INITIAL_CAPACITY);
+        for (int i = 0; i < ArrayBackedList.DEFAULT_INITIAL_CAPACITY; i++) {
+            curr = curr.plusHours(i);
+            list.add(curr);
+        }
+        curr = curr.plusDays(1);
+        try {
+            list.add(curr);
+            System.out.println("Successfully added one more element " 
+                    + curr.toString() + " beyond initial capacity " 
+                    + ArrayBackedList.DEFAULT_INITIAL_CAPACITY);
+        } catch (ArrayIndexOutOfBoundsException aioobe) {
+            System.out.println("\"" + aioobe.getMessage() + "\"");
+            String msg = "Trying to add one more element " + curr.toString() 
+                    + " beyond initial capacity " 
+                    + ArrayBackedList.DEFAULT_INITIAL_CAPACITY 
+                    + " should not have caused ArrayIndexOutOfBoundsException";
+            fail(msg);
+        } catch (RuntimeException re) {
+            String msg = re.getClass().getName() 
+                    + " should not have occurred, list should have expanded";
+            fail(msg);
+        }
+    }
 
     /**
      * Test of the size function, of the ArrayBackedList class.
