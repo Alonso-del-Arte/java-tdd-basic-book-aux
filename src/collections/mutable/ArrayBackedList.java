@@ -25,9 +25,7 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
         int oldCapacity = this.elements.length;
         int expandedCapacity = 3 * oldCapacity / 2;
         Object[] replacementArray = new Object[expandedCapacity];
-        for (int i = 0; i < oldCapacity; i++) {
-            replacementArray[i] = this.elements[i];
-        }
+        System.arraycopy(this.elements, 0, replacementArray, 0, oldCapacity);
         this.elements = replacementArray;
     }
     
