@@ -44,6 +44,7 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     
     // TODO: Write tests for this
     public boolean add(int index, E element) {
+        this.add(element);
         return false;
     }
     
