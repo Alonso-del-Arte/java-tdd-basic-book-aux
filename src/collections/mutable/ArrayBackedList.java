@@ -22,13 +22,22 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     private int count = 0;
     
     private void expandCapacity() {
-        //
+        int oldCapacity = this.elements.length;
+        int expandedCapacity = 3 * oldCapacity / 2;
+        Object[] replacementArray = new Object[expandedCapacity];
+        for (int i = 0; i < oldCapacity; i++) {
+            replacementArray[i] = this.elements[i];
+        }
+        this.elements = replacementArray;
     }
     
     public boolean add(E element) {
         if (element == null) {
             return false;
         } else {
+            if (this.count == this.elements.length) {
+                this.expandCapacity();
+            }
             this.elements[this.count] = element;
             this.count++;
             return true;
