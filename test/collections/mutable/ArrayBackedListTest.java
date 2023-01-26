@@ -108,6 +108,22 @@ public class ArrayBackedListTest {
             assertEquals(expected, actual);
         }
     }
+    
+    @Test
+    public void testAddAtLastIndex() {
+        ArrayBackedList<BigInteger> list = new ArrayBackedList<>();
+        for (int i = 0; i < ArrayBackedList.DEFAULT_INITIAL_CAPACITY; i++) {
+            list.add(new BigInteger(64 + i, RANDOM));
+        }
+        BigInteger expected = new BigInteger(84, RANDOM);
+        boolean opResult = list.add(ArrayBackedList.DEFAULT_INITIAL_CAPACITY, 
+                expected);
+        String msg = "Should have been able to add " + expected.toString() 
+                + " at index " + ArrayBackedList.DEFAULT_INITIAL_CAPACITY;
+        assert opResult : msg;
+        BigInteger actual = list.get(ArrayBackedList.DEFAULT_INITIAL_CAPACITY);
+        assertEquals(expected, actual);
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
