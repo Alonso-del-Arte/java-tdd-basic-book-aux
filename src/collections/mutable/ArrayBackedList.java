@@ -43,8 +43,7 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     }
     
     public boolean add(int index, E element) {
-        this.add(element);
-        return true;
+        return this.add(element);
     }
     
     public int size() {
