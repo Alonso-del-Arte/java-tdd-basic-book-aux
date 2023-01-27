@@ -42,8 +42,17 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
         }
     }
     
+    private void moveElementsRight(int index) {
+        //
+    }
+    
     public boolean add(int index, E element) {
-        return this.add(element);
+        if (index == this.count) {
+            return this.add(element);
+        } else {
+            this.expandCapacity();
+            return true;
+        }
     }
     
     public int size() {
