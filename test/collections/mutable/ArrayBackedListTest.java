@@ -124,6 +124,19 @@ public class ArrayBackedListTest {
         BigInteger actual = list.get(ArrayBackedList.DEFAULT_INITIAL_CAPACITY);
         assertEquals(expected, actual);
     }
+    
+    @Test
+    public void testAddAtIndexRejectsNull() {
+        ArrayBackedList<BigInteger> list = new ArrayBackedList<>();
+        for (int i = 0; i < ArrayBackedList.DEFAULT_INITIAL_CAPACITY; i++) {
+            list.add(new BigInteger(64 + i, RANDOM));
+        }
+        boolean opResult = list.add(ArrayBackedList.DEFAULT_INITIAL_CAPACITY, 
+                null);
+        String msg = "Should not have been able to add null at index " 
+                + ArrayBackedList.DEFAULT_INITIAL_CAPACITY;
+        assert !opResult : msg;
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
