@@ -43,7 +43,13 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     }
     
     private void moveElementsRight(int index) {
-        //
+        if (this.elements.length == this.count) {
+            this.expandCapacity();
+        }
+        for (int i = this.count; i > index; i--) {
+            this.elements[i] = this.elements[i - 1];
+        }
+        this.count++;
     }
     
     public boolean add(int index, E element) {
@@ -53,9 +59,8 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
         if (index == this.count) { 
             return this.add(element);
         } else {
-            this.expandCapacity();
-            this.elements[this.count] = this.elements[0];
-            this.count++;
+            this.moveElementsRight(index);
+            this.elements[index] = element;
             return true;
         }
     }
