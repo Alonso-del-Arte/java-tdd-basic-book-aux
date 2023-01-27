@@ -137,7 +137,7 @@ public class ArrayBackedListTest {
         assert !opResult : msg;
     }
     
-//    @Test
+    @Test
     public void testAddAtIndex() {
         int capacity = RANDOM.nextInt(ArrayBackedList.DEFAULT_INITIAL_CAPACITY) 
                 + ArrayBackedList.DEFAULT_INITIAL_CAPACITY;

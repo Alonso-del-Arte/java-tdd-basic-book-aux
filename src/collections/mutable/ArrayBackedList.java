@@ -50,10 +50,12 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
         if (element == null) {
             return false;
         }
-        if (index == this.count) {
+        if (index == this.count) { 
             return this.add(element);
         } else {
             this.expandCapacity();
+            this.elements[this.count] = this.elements[0];
+            this.count++;
             return true;
         }
     }
