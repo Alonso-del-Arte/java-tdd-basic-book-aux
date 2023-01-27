@@ -47,6 +47,9 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     }
     
     public boolean add(int index, E element) {
+        if (element == null) {
+            return false;
+        }
         if (index == this.count) {
             return this.add(element);
         } else {
