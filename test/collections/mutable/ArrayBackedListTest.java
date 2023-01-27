@@ -137,6 +137,27 @@ public class ArrayBackedListTest {
                 + ArrayBackedList.DEFAULT_INITIAL_CAPACITY;
         assert !opResult : msg;
     }
+    
+    @Test
+    public void testAddAtIndex() {
+        int capacity = RANDOM.nextInt(ArrayBackedList.DEFAULT_INITIAL_CAPACITY) 
+                + ArrayBackedList.DEFAULT_INITIAL_CAPACITY;
+        byte[] expecteds = new byte[capacity];
+        RANDOM.nextBytes(expecteds);
+        int skipIndex = RANDOM.nextInt(capacity);
+        ArrayBackedList<Byte> list = new ArrayBackedList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            if (i != skipIndex) {
+                list.add(expecteds[i]);
+            }
+        }
+        list.add(skipIndex, expecteds[skipIndex]);
+        byte[] actuals = new byte[capacity];
+        for (int i = 0; i < capacity; i++) {
+            actuals[i] = list.get(i);
+        }
+        assertArrayEquals(expecteds, actuals);
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
