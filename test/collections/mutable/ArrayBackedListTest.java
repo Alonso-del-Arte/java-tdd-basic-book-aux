@@ -157,6 +157,12 @@ public class ArrayBackedListTest {
         }
         assertArrayEquals(expecteds, actuals);
     }
+    
+    @Test
+    public void testReferentialEquality() {
+        ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
+        assertEquals(list, list);
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
