@@ -92,6 +92,16 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
         // TODO: Write tests for this
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
+    
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+    
     public ArrayBackedList() {
         this(DEFAULT_INITIAL_CAPACITY);
     }
