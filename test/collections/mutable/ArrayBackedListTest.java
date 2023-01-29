@@ -193,6 +193,20 @@ public class ArrayBackedListTest {
                 + " elements";
         assertNotEquals(msg, listA, listB);
     }
+    
+    @Test
+    public void testEquals() {
+        System.out.println("equals");
+        int capacity = RANDOM.nextInt(16) + 4;
+        ArrayBackedList<BigInteger> someList = new ArrayBackedList<>(capacity);
+        ArrayBackedList<BigInteger> sameList = new ArrayBackedList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            BigInteger number = new BigInteger(64 + i, RANDOM);
+            someList.add(number);
+            sameList.add(number);
+        }
+        assertEquals(someList, sameList);
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
