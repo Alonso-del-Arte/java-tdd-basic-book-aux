@@ -163,6 +163,12 @@ public class ArrayBackedListTest {
         ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
         assertEquals(list, list);
     }
+    
+    @Test
+    public void testNotEqualsNull() {
+        ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
+        assertNotEquals(list, null);
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
