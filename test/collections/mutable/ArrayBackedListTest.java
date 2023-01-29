@@ -177,6 +177,22 @@ public class ArrayBackedListTest {
         list.add(element);
         assertNotEquals(list, element);
     }
+    
+    @Test
+    public void testNotEqualsDiffSizeList() {
+        int capacity = RANDOM.nextInt(16) + 4;
+        ArrayBackedList<Integer> listA = new ArrayBackedList<>(capacity);
+        ArrayBackedList<Integer> listB = new ArrayBackedList<>(capacity + 1);
+        for (int i = 0; i < capacity; i++) {
+            listA.add(i);
+            listB.add(i);
+        }
+        listB.add(capacity);
+        String msg = "List A with " + listA.size() 
+                + " elements should not be equal to list B with " + listB.size() 
+                + " elements";
+        assertNotEquals(msg, listA, listB);
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
