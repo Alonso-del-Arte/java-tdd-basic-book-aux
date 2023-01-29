@@ -93,11 +93,6 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     }
     
     @Override
-    public boolean equals(Object obj) {
-        return obj instanceof ArrayBackedList;
-    }
-    
-    @Override
     public int hashCode() {
         return 0;
     }
