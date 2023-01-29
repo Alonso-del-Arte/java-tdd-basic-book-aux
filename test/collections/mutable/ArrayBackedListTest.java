@@ -169,6 +169,14 @@ public class ArrayBackedListTest {
         ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
         assertNotEquals(list, null);
     }
+    
+    @Test
+    public void testNotEqualsDiffClass() {
+        String element = "This is an element of a list";
+        ArrayBackedList<String> list = new ArrayBackedList<>();
+        list.add(element);
+        assertNotEquals(list, element);
+    }
 
     /**
      * Test of contains method, of class ArrayBackedList.
