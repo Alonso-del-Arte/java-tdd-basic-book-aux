@@ -103,7 +103,17 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
         if (!this.getClass().equals(obj.getClass())) {
             return false;
         }
-        return this.count == ((ArrayBackedList) obj).count;
+        final ArrayBackedList<?> other = (ArrayBackedList<?>) obj;
+        if (this.count != other.count) {
+            return false;
+        }
+        boolean matchesSoFar = true;
+        int index = 0;
+        while (matchesSoFar && index < this.count) {
+            matchesSoFar = this.elements[index].equals(other.elements[index]);
+            index++;
+        }
+        return matchesSoFar;
     }
     
     @Override
