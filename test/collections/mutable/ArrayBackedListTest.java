@@ -208,6 +208,18 @@ public class ArrayBackedListTest {
         assertEquals(someList, sameList);
     }
 
+    @Test
+    public void testNotEqualsSameSizeDiffElemesList() {
+        int capacity = RANDOM.nextInt(16) + 4;
+        ArrayBackedList<Integer> listA = new ArrayBackedList<>(capacity);
+        ArrayBackedList<Integer> listB = new ArrayBackedList<>(capacity + 1);
+        for (int i = 0; i < capacity; i++) {
+            listA.add(i);
+            listB.add(i + (i % 2));
+        }
+        assertNotEquals(listA, listB);
+    }
+    
     /**
      * Test of contains method, of class ArrayBackedList.
      */
