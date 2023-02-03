@@ -118,7 +118,11 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     
     @Override
     public int hashCode() {
-        return 0;
+        int hash = 7;
+        for (int i = 0; i < this.count; i++) {
+            hash = 31 * hash + this.elements[i].hashCode();
+        }
+        return (hash << 8) + this.count;
     }
     
     public ArrayBackedList() {
