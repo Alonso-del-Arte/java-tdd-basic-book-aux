@@ -237,6 +237,19 @@ public class ArrayBackedListTest {
         }
     }
     
+    @Test
+    public void testHashCodesForSameLengthDiffElemsListsDiffer() {
+        int capacity = RANDOM.nextInt(64) + 16;
+        ArrayBackedList<BigInteger> numbers = new ArrayBackedList<>(capacity);
+        ArrayBackedList<String> numberTexts = new ArrayBackedList<>(capacity);
+        for (int i = 1; i < capacity; i++) {
+            BigInteger number = new BigInteger(72 + i, RANDOM);
+            numbers.add(number);
+            numberTexts.add(number.toString());
+            assertNotEquals(numbers.hashCode(), numberTexts.hashCode());
+        }
+    }
+    
     /**
      * Test of contains method, of class ArrayBackedList.
      */
