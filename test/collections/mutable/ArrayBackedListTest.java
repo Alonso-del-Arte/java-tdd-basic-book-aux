@@ -220,6 +220,23 @@ public class ArrayBackedListTest {
         assertNotEquals(listA, listB);
     }
     
+    @Test
+    public void testHashCode() {
+        System.out.println("hashCode");
+        int capacity = 256;
+        int mask = 255;
+        ArrayBackedList<BigInteger> list = new ArrayBackedList<>(capacity);
+        for (int expected = 0; expected < capacity; expected++) {
+            int bitLength = 64 + (expected % 64);
+            BigInteger element = new BigInteger(bitLength, RANDOM);
+            list.add(element);
+            int hash = list.hashCode();
+            int actual = hash & mask;
+            assertEquals(expected, actual);
+            assertNotEquals(expected, hash);
+        }
+    }
+    
     /**
      * Test of contains method, of class ArrayBackedList.
      */
