@@ -228,12 +228,12 @@ public class ArrayBackedListTest {
         ArrayBackedList<BigInteger> list = new ArrayBackedList<>(capacity);
         for (int expected = 0; expected < capacity; expected++) {
             int bitLength = 64 + (expected % 64);
-            BigInteger element = new BigInteger(bitLength, RANDOM);
-            list.add(element);
             int hash = list.hashCode();
             int actual = hash & mask;
             assertEquals(expected, actual);
             assertNotEquals(expected, hash);
+            BigInteger element = new BigInteger(bitLength, RANDOM);
+            list.add(element);
         }
     }
     
