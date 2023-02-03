@@ -17,7 +17,12 @@ public enum DayOfTheWeek {
     
     private final String threeLetterAbbrev;
     
+    public String getAbbreviation() {
+        return "SORRY, NOT IMPLEMENTED YET";
+    }
+    
     DayOfTheWeek(String abbrev) {
         this.threeLetterAbbrev = abbrev;
     }
+    
 }
