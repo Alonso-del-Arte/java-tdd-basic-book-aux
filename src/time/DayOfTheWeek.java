@@ -21,6 +21,10 @@ public enum DayOfTheWeek {
         return "SORRY, NOT IMPLEMENTED YET";
     }
     
+    public int getISO8601Value() {
+        return Integer.MAX_VALUE;
+    }
+    
     DayOfTheWeek(String abbrev) {
         this.threeLetterAbbrev = abbrev;
     }
