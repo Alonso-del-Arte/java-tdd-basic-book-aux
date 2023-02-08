@@ -22,7 +22,12 @@ public enum DayOfTheWeek {
     }
     
     public int getISO8601Value() {
-        return Integer.MAX_VALUE;
+        int ord = this.ordinal();
+        int ordAdjustSunday = 0;
+        if (ord == 0) {
+            ordAdjustSunday = 7;
+        }
+        return ord + ordAdjustSunday;
     }
     
     DayOfTheWeek(String abbrev) {
