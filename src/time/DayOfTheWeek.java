@@ -23,10 +23,7 @@ public enum DayOfTheWeek {
     
     public int getISO8601Value() {
         int ord = this.ordinal();
-        int ordAdjustSunday = 0;
-        if (ord == 0) {
-            ordAdjustSunday = 7;
-        }
+        int ordAdjustSunday = ord == 0 ? 7 : 0;
         return ord + ordAdjustSunday;
     }
     
