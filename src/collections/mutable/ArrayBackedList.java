@@ -5,6 +5,8 @@
  */
 package collections.mutable;
 
+import java.util.Iterator;
+
 /**
  * EXERCISE: A re-imagining of <code>java.util.ArrayList&lt;E&gt;</code>. For 
  * this exercise, pretend that <code>ArrayList&lt;E&gt;</code> does not exist. 
@@ -13,7 +15,8 @@ package collections.mutable;
  * <code>java.time.LocalDateTime</code>.
  * @author Alonso del Arte
  */
-public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
+public class ArrayBackedList<E> extends ArrayBackedCollection<E> 
+        implements Iterable<E> {
     
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
     
@@ -90,6 +93,23 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E> {
     
     public void clear() {
         // TODO: Write tests for this
+    }
+    
+    // TODO: Write tests for this
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator() {
+            
+            @Override
+            public E next() {
+                return null;
+            }
+            
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+        };
     }
     
     @Override
