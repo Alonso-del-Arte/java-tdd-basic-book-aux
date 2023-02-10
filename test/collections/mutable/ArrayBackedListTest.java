@@ -159,6 +159,23 @@ public class ArrayBackedListTest {
     }
     
     @Test
+    public void testToString() {
+        System.out.println("toString");
+        int capacity = RANDOM.nextInt(8) + 2;
+        ArrayBackedList<Integer> list = new ArrayBackedList<>(capacity);
+        String intermediate = "[";
+        for (int i = 0; i < capacity; i++) {
+            int number = i + RANDOM.nextInt(capacity);
+            list.add(number);
+            intermediate += number + ",";
+        }
+        String expected = intermediate.substring(0, intermediate.length() - 1) 
+                + "]";
+        String actual = list.toString().replace(" ", "");
+        assertEquals(expected, actual);
+    }
+    
+    @Test
     public void testReferentialEquality() {
         ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
         assertEquals(list, list);
