@@ -176,6 +176,23 @@ public class ArrayBackedListTest {
     }
     
     @Test
+    public void testToStringForEmptyList() {
+        ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
+        try {
+            String expected = "[]";
+            String actual = list.toString().replace(" ", "");
+            assertEquals(expected, actual);
+        } catch (StringIndexOutOfBoundsException sioobe) {
+            String msg = "Exception because of " + sioobe.getMessage() 
+                    + " should not have occurred";
+            fail(msg);
+        } catch (RuntimeException re) {
+            String msg = re.getClass().getName() + " should not have occurred";
+            fail(msg);
+        }
+    }
+    
+    @Test
     public void testReferentialEquality() {
         ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
         assertEquals(list, list);
