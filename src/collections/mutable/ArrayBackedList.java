@@ -113,6 +113,19 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E>
     }
     
     @Override
+    public String toString() {
+        if (this.count == 0) {
+            return "SORRY, NOT IMPLEMENTED YET";
+        }
+        String intermediate = "[";
+        for (int i = 0; i < this.count; i++) {
+            intermediate += this.elements[i].toString() + ", ";
+        }
+        intermediate = intermediate.substring(0, intermediate.length() - 2);
+        return intermediate + "]";
+    }
+    
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
