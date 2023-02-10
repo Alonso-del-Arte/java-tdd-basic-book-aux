@@ -115,7 +115,7 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E>
     @Override
     public String toString() {
         if (this.count == 0) {
-            return "SORRY, NOT IMPLEMENTED YET";
+            return "[]";
         }
         String intermediate = "[";
         for (int i = 0; i < this.count; i++) {
