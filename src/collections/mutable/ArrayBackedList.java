@@ -95,19 +95,20 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E>
         // TODO: Write tests for this
     }
     
-    // TODO: Write tests for this
     @Override
     public Iterator<E> iterator() {
         return new Iterator() {
             
+            private int index = 0;
+            
             @Override
             public E next() {
-                return null;
+                return (E) ArrayBackedList.this.elements[this.index++];
             }
             
             @Override
             public boolean hasNext() {
-                return false;
+                return this.index < ArrayBackedList.this.count;
             }
             
         };
