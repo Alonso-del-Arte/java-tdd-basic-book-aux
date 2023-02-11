@@ -9,6 +9,7 @@ import arithmetic.ComplexNumber;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.Iterator;
 import java.util.Random;
 
 import javax.smartcardio.CardTerminal;
@@ -282,6 +283,14 @@ public class ArrayBackedListTest {
             numberTexts.add(number.toString());
             assertNotEquals(numbers.hashCode(), numberTexts.hashCode());
         }
+    }
+    
+    @Test
+    public void testEmptyListIteratorDoesNotHaveNext() {
+        ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
+        Iterator<CardTerminal> iterator = list.iterator();
+        String msg = "Iterator for empty list should not have next";
+        assert !iterator.hasNext() : msg;
     }
     
     /**
