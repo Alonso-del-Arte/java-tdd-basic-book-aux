@@ -107,8 +107,9 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E>
             
             @Override
             public boolean hasNext() {
-                return true;
+                return false;
             }
+            
         };
     }
     
