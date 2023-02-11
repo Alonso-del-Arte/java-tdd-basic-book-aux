@@ -293,6 +293,21 @@ public class ArrayBackedListTest {
         assert !iterator.hasNext() : msg;
     }
     
+    @Test
+    public void testIterator() {
+        System.out.println("iterator");
+        int capacity = RANDOM.nextInt(8) + 2;
+        ArrayBackedList<BigInteger> expected = new ArrayBackedList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            expected.add(new BigInteger(64 + i, RANDOM));
+        }
+        ArrayBackedList<BigInteger> actual = new ArrayBackedList<>(capacity);
+        for (BigInteger number : expected) {
+            actual.add(number);
+        }
+        assertEquals(expected, actual);
+    }
+    
     /**
      * Test of contains method, of class ArrayBackedList.
      */
