@@ -10,6 +10,7 @@ import arithmetic.ComplexNumber;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 import javax.smartcardio.CardTerminal;
@@ -306,6 +307,25 @@ public class ArrayBackedListTest {
             actual.add(number);
         }
         assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testEmptyIteratorNextThrowsException() {
+        ArrayBackedList<CardTerminal> list = new ArrayBackedList<>();
+        Iterator<CardTerminal> iterator = list.iterator();
+        try {
+            CardTerminal badObject = iterator.next();
+            String msg = "Calling next on depleted iterator shouldn't've given " 
+                    + badObject;
+            fail(msg);
+        } catch (NoSuchElementException nsee) {
+            System.out.println("Next on depleted iterator caused exception");
+            System.out.println("\"" + nsee.getMessage() + "\"");
+        } catch (RuntimeException re) {
+            String msg = re.getClass().getName() 
+                    + " is the wrong for calling next on depleted iterator";
+            fail(msg);
+        }
     }
     
     /**
