@@ -6,6 +6,7 @@
 package collections.mutable;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * EXERCISE: A re-imagining of <code>java.util.ArrayList&lt;E&gt;</code>. For 
@@ -103,6 +104,10 @@ public class ArrayBackedList<E> extends ArrayBackedCollection<E>
             
             @Override
             public E next() {
+                if (this.index == ArrayBackedList.this.count) {
+                    String excMsg = "Iterator has run out of elements";
+                    throw new NoSuchElementException(excMsg);
+                }
                 return (E) ArrayBackedList.this.elements[this.index++];
             }
             
