@@ -137,6 +137,16 @@ public class DoublyLinkedList<E> implements Iterable<E> {
         return intermediate + ']';
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
+    
+    @Override
+    public int hashCode() {
+        return Integer.MAX_VALUE;
+    }
+    
     public DoublyLinkedList() {
         //
     }
