@@ -5,13 +5,15 @@
  */
 package collections.mutable;
 
+import java.util.Iterator;
+
 /**
  * EXERCISE: Create a doubly-linked list. A stub is provided for a nested static 
  * class.
  * @param <E> The type of elements the list will hold.
  * @author Alonso del Arte
  */
-public class DoublyLinkedList<E> {
+public class DoublyLinkedList<E> implements Iterable<E> {
     
     private boolean hasElements = false;
     
@@ -99,6 +101,24 @@ public class DoublyLinkedList<E> {
     
     public void clear() {
         // TODO: Write tests for this
+    }
+    
+    // TODO: Write tests for this
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            
+            @Override
+            public boolean hasNext() {
+                return false;
+            }
+
+            @Override
+            public E next() {
+                return null;
+            }
+            
+        };
     }
     
     @Override
