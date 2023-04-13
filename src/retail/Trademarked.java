@@ -9,10 +9,16 @@ public interface Trademarked {
     
     String mark();
     
-    String markWithASCII();
+    default String markWithASCII() {
+        return this.mark() + "?";
+    }
     
-    String markWithHTML();
+    default String markWithHTML() {
+        return this.mark() + "?";
+    }
     
-    String markWithUnicode();
+    default String markWithUnicode() {
+        return this.mark() + "?";
+    }
     
 }
