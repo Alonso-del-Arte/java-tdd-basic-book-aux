@@ -11,22 +11,22 @@ public class Escalator extends FixedPathVehicle implements Trademarked {
 
     @Override
     public String mark() {
-        return "SORRY, NOT IMPLEMENTED YET";
+        return "Escalator";
     }
 
     @Override
     public String markWithASCII() {
-        return "SORRY, NOT IMPLEMENTED YET";
+        return this.mark() + "(TM)";
     }
 
     @Override
     public String markWithHTML() {
-        return "SORRY, NOT IMPLEMENTED YET";
+        return this.mark() + "&trade;";
     }
 
     @Override
     public String markWithUnicode() {
-        return "SORRY, NOT IMPLEMENTED YET";
+        return this.mark() + "\u2122";
     }
     
 }
