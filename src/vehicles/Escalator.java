@@ -11,22 +11,22 @@ public class Escalator extends FixedPathVehicle implements Trademarked {
 
     @Override
     public String mark() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "SORRY, NOT IMPLEMENTED YET";
     }
 
     @Override
     public String markWithASCII() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "SORRY, NOT IMPLEMENTED YET";
     }
 
     @Override
     public String markWithHTML() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "SORRY, NOT IMPLEMENTED YET";
     }
 
     @Override
     public String markWithUnicode() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "SORRY, NOT IMPLEMENTED YET";
     }
     
 }
