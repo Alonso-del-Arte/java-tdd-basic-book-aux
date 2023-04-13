@@ -5,7 +5,7 @@
  */
 package vehicles;
 
-public class Car extends Vehicle {
+public class Vehicle {
     
     private SerialNumber serialNumber;
     

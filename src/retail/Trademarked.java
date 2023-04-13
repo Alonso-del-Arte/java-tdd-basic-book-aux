@@ -3,10 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vehicles;
+package retail;
 
-public class Car extends Vehicle {
+public interface Trademarked {
     
-    private SerialNumber serialNumber;
+    String mark();
+    
+    String markWithASCII();
+    
+    String markWithHTML();
+    
+    String markWithUnicode();
     
 }

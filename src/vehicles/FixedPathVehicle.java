@@ -5,8 +5,6 @@
  */
 package vehicles;
 
-public class Car extends Vehicle {
-    
-    private SerialNumber serialNumber;
+public class FixedPathVehicle extends Vehicle {
     
 }
