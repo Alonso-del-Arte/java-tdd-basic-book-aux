@@ -10,15 +10,15 @@ public interface Trademarked {
     String mark();
     
     default String markWithASCII() {
-        return this.mark() + "?";
+        return this.mark() + "(TM)";
     }
     
     default String markWithHTML() {
-        return this.mark() + "?";
+        return this.mark() + "&trade;";
     }
     
     default String markWithUnicode() {
-        return this.mark() + "?";
+        return this.mark() + '\u2122';
     }
     
 }
