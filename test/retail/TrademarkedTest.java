@@ -33,7 +33,7 @@ public class TrademarkedTest {
         System.out.println("markWithUnicode");
         Trademarked instance = new TrademarkedImpl();
         String expected = instance.mark() + '\u2122';
-        String actual = instance.markWithASCII();
+        String actual = instance.markWithUnicode();
         assertEquals(expected, actual);
     }
     
