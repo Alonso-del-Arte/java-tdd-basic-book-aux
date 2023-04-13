@@ -5,6 +5,44 @@
  */
 package retail;
 
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 public class TrademarkedTest {
+    
+    @Test
+    public void testMarkWithASCII() {
+        System.out.println("markWithASCII");
+        Trademarked instance = new TrademarkedImpl();
+        String expected = instance.mark() + "(TM)";
+        String actual = instance.markWithASCII();
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMarkWithHTML() {
+        System.out.println("markWithHTML");
+        Trademarked instance = new TrademarkedImpl();
+        String expected = instance.mark() + "&trade;";
+        String actual = instance.markWithHTML();
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMarkWithUnicode() {
+        System.out.println("markWithUnicode");
+        Trademarked instance = new TrademarkedImpl();
+        String expected = instance.mark() + '\u2122';
+        String actual = instance.markWithASCII();
+        assertEquals(expected, actual);
+    }
+    
+    private static class TrademarkedImpl implements Trademarked {
+        
+        @Override
+        public String mark() {
+            return "Examplatoreadore";
+        }
+    }
     
 }
