@@ -4,9 +4,10 @@ import animals.characteristics.FlightCapable;
 import animals.characteristics.FlightParameters;
 import animals.chordates.birds.Bird;
 
-public class Charadriiform extends Bird implements FlightCapable {
+public abstract class Charadriiform extends Bird implements FlightCapable {
     
-    public String order() {
+    @Override
+    public final String order() {
         return "Charadriiformes";
     }
     

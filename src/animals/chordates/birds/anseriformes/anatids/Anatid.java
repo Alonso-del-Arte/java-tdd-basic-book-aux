@@ -2,9 +2,10 @@ package animals.chordates.birds.anseriformes.anatids;
 
 import animals.chordates.birds.anseriformes.Anseriform;
 
-public class Anatid extends Anseriform {
+public abstract class Anatid extends Anseriform {
     
-    public String family() {
+    @Override
+    public final String family() {
         return "Anatidae";
     }
     

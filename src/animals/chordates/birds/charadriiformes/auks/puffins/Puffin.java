@@ -2,9 +2,9 @@ package animals.chordates.birds.charadriiformes.auks.puffins;
 
 import animals.chordates.birds.charadriiformes.auks.Auk;
 
-public class Puffin extends Auk {
+public abstract class Puffin extends Auk {
     
-    public String genus() {
+    public final String genus() {
         return "Fratercula";
     }
     

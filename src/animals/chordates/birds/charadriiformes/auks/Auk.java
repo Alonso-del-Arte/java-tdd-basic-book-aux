@@ -4,9 +4,10 @@ import animals.characteristics.SwimCapable;
 import animals.characteristics.SwimParameters;
 import animals.chordates.birds.charadriiformes.Charadriiform;
 
-public class Auk extends Charadriiform implements SwimCapable {
+public abstract class Auk extends Charadriiform implements SwimCapable {
     
-    public String family() {
+    @Override
+    public final String family() {
         return "Alcidae";
     }
     

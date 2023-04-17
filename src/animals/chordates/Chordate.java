@@ -2,8 +2,9 @@ package animals.chordates;
 
 import animals.Animal;
 
-public class Chordate extends Animal {
+public abstract class Chordate extends Animal {
     
+    @Override
     public final String phylum() {
         return "Chordata";
     }

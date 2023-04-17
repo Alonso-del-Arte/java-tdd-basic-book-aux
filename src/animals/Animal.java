@@ -1,33 +1,24 @@
 package animals;
 
-public class Animal {
+public abstract class Animal {
     
     public final String kingdom() {
         return "Animalia";
     }
 
-    public String phylum() {
-        return "Not applicable";
-    }
+    public abstract String phylum();
 
-    public String taxoClass() {
-        return "Not applicable";
-    }
+    public abstract String taxoClass();
 
-    public String order() {
-        return "Not applicable";
-    }
+    public abstract String order();
 
-    public String family() {
-        return "Not applicable";
-    }
+    public abstract String family();
 
-    public String species() {
-        return "Not applicable";
-    }
+    public abstract String species();
 
+    // TODO: Write tests for this
     public String getTaxonomicClassification() {
-        return "Unknown";
+        return "SORRY, NOT IMPLEMENTED YET";
     }
 
     public void printAnimalInfo() {

@@ -2,9 +2,10 @@ package animals.chordates.birds.anseriformes;
 
 import animals.chordates.birds.Bird;
 
-public class Anseriform extends Bird {
+public abstract class Anseriform extends Bird {
     
-    public String order() {
+    @Override
+    public final String order() {
         return "Anseriformes";
     }
     
