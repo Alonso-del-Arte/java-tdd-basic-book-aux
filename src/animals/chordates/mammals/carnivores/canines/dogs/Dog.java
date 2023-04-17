@@ -12,6 +12,15 @@ public class Dog extends Canine {
     public String getTaxonomicClassification() {
         return "Canis familiaris";
     }
+    
+    public void printAnimalInfo() {
+        System.out.println("Kingdom: " + this.kingdom());
+        System.out.println("Phylum:  " + this.phylum());
+        System.out.println("Class:   " + this.taxoClass());
+        System.out.println("Order:   " + this.order());
+        System.out.println("Family:  " + this.family());
+        System.out.println("Species: " + this.species());
+}
 
     public void bark() {
         System.out.println("Arf! Arf!");
